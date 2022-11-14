@@ -3,7 +3,6 @@ require('dotenv').config();
 // const { db } = require('../app');
 const db = require('../firebase');
 const { collection, query, orderBy, onSnapshot, getDoc, addDoc } = require('firebase/firestore');
-const { registerVersion } = require('firebase/app');
 
 const colRef = collection(db, 'posters');
 
