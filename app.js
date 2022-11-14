@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', postersRoute);
-app.use('/admin/addposter', addPosterRoute);
+app.use('/addposter', addPosterRoute);
 
 app.get('/', async (req, res) => {
     res.json({
