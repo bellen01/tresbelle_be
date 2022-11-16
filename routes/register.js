@@ -17,6 +17,7 @@ routes.post('/', async (req, res) => {
     console.log(req.body);
     const emailToLowerCase = req.body.email.toLowerCase();
     const q = query(userRef, where("email", "==", emailToLowerCase));
+    const doesUserExist = await getDocs(q);
     console.log(doesUserExist.docs)
     if (doesUserExist.docs.length !== 0) {
         console.log('Email is already registered');
