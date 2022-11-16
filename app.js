@@ -12,6 +12,8 @@ const bodyParser = require('body-parser');
 
 const postersRoute = require('./routes/posters.js');
 const addPosterRoute = require('./routes/addPoster.js');
+// const loginRoute = require('./routes/login.js')
+const registerRoute = require('./routes/register.js')
 
 
 app.use(cors());
@@ -20,6 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', postersRoute);
 app.use('/addposter', addPosterRoute);
+// app.use('/login', loginRoute);
+app.use('/register', registerRoute);
 
 app.get('/', async (req, res) => {
     res.json({
