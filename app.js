@@ -3,19 +3,11 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 
-
-// const firebaseConfig = require('./config');
-// const { initializeApp } = require('firebase/app');
-// const { getFirestore } = require('firebase/firestore');
-
-// console.log(firebaseConfig);
-// const firebase = initializeApp(firebaseConfig);
-// const db = getFirestore(firebase);
-
 const postersRoute = require('./routes/posters.js');
 const addPosterRoute = require('./routes/addPoster.js');
 const loginRoute = require('./routes/login.js')
 const registerRoute = require('./routes/register.js')
+const productDetailsRoute = require('./routes/productDetails.js')
 
 
 app.use(cors());
@@ -26,6 +18,7 @@ app.use('/', postersRoute);
 app.use('/addposter', addPosterRoute);
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
+app.use('/product', productDetailsRoute);
 
 app.get('/', async (req, res) => {
     res.json({
